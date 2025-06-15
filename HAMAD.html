@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>من نحن - متجر إلكتروني</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f9f9f9;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 2rem;
+      background-color: white;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      line-height: 1.8;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+      color: #333;
+    }
+
+    p {
+      color: #555;
+      font-size: 1.1rem;
+      text-align: justify;
+    }
+
+    .team-section {
+      margin-top: 2rem;
+    }
+
+    .team-member {
+      display: flex;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+
+    .team-member img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-left: 1rem;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    .team-member div {
+      flex: 1;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .team-member {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .team-member img {
+        margin: 0 0 10px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- الهيدر -->
+  <div id="header"></div>
+
+  <!-- المحتوى -->
+  <div class="container">
+    <h2>من نحن</h2>
+    <p>
+      نحن فريق شغوف بتقديم أفضل تجربة تسوق إلكتروني لعملائنا في المملكة العربية السعودية. نسعى لتوفير منتجات عالية الجودة بأسعار مناسبة، مع خدمة عملاء ممتازة وتسليم سريع وآمن.
+    </p>
+
+    <p>
+      نؤمن بأهمية بناء الثقة مع عملائنا، ونعمل باستمرار على تحسين خدماتنا وتوسيع مجموعة المنتجات لتلبي كافة احتياجاتكم.
+    </p>
+
+    <div class="team-section">
+      <h3>فريق العمل</h3>
+      <div class="team-member">
+        <img src="https://via.placeholder.com/80" alt="عضو الفريق" />
+        <div>
+          <strong>حمد المطيري</strong><br>
+          المؤسس والمدير التنفيذي
+        </div>
+      </div>
+
+      <div class="team-member">
+        <img src="https://via.placeholder.com/80" alt="عضو الفريق" />
+        <div>
+          <strong>أحمد العتيبي</strong><br>
+          مسؤول التسويق والمبيعات
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- الفوتر -->
+  <div id="footer"></div>
+
+  <!-- تحميل الهيدر والفوتر -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      fetch("header.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("header").innerHTML = data)
+        .catch(error => console.error("فشل تحميل الهيدر:", error));
+
+      fetch("footer.html")
+        .then(response => response.text())
+        .then(data => document.getElementById("footer").innerHTML = data)
+        .catch(error => console.error("فشل تحميل الفوتر:", error));
+    });
+  </script>
+
+</body>
+</html>
